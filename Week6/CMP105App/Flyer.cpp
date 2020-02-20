@@ -49,9 +49,25 @@ void Flyer::update(float dt)
 {
 	if (dragged)
 	{
-		sf::Vector2f pos = ((currVelocity * dt) + (0.5f * gravity * dt * dt));
+		sf::Vector2f  pos = ((currVelocity * dt) + (0.5f * gravity * dt * dt));
 		currVelocity += gravity * dt;
 		setPosition(getPosition() + pos);
+	}
+	if (getPosition().y >= _winsize.y - getSize().y)
+	{
+		currVelocity.y = currVelocity.y * -1;
+	}
+	if (getPosition().x >= _winsize.x - getSize().x)
+	{
+		currVelocity.x = currVelocity.x * -1;
+	}
+	if (getPosition().y <= 0)
+	{
+		currVelocity.y = currVelocity.y * -1;
+	}
+	if (getPosition().x <= 0)
+	{
+		currVelocity.x = currVelocity.x * -1;
 	}
 }
 
