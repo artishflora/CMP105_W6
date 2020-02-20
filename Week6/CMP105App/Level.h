@@ -6,6 +6,7 @@
 #include <iostream>
 #include "Ball.h"
 #include "Targeter.h"
+#include "Flyer.h"
 
 class Level{
 public:
@@ -20,6 +21,8 @@ public:
 	sf::Texture ballNo1Text;
 	Targeter targeter;
 	sf::Texture targeterText;
+	Flyer flyer;
+	sf::Texture flyerText;
 
 private:
 	// Default functions for rendering to the screen.

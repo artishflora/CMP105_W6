@@ -42,6 +42,9 @@
     <ClCompile Include="Targeter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Flyer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -71,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Targeter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flyer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,6 +19,13 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	targeter.setPosition(0, 0);
 	targeter.getWin(window->getSize());
 	targeter.setInput(input);
+
+	flyerText.loadFromFile("gfx/Beach_Ball.png");
+	flyer.setSize(sf::Vector2f(50, 50));
+	flyer.setTexture(&flyerText);
+	flyer.setPosition(0, window->getSize().y - 150);
+	flyer.getWin(window->getSize());
+	flyer.setInput(input);
 }
 
 Level::~Level()
@@ -38,6 +45,8 @@ void Level::update(float dt)
 	ballNo1.update(dt);
 	ballNo1.handleInput(dt);
 	targeter.update(dt);
+	flyer.handleInput(dt);
+	flyer.update(dt);
 }
 
 // Render level
@@ -47,6 +56,7 @@ void Level::render()
 
 	window->draw(ballNo1);
 	window->draw(targeter);
+	window->draw(flyer);
 
 	endDraw();
 }

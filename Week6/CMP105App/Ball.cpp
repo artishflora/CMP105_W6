@@ -6,7 +6,7 @@ Ball::Ball()
 	gravity = sf::Vector2f(0, 9.8f) * scale;
 	currVelocity = sf::Vector2f(0, 0);
 	jumpVector = sf::Vector2f(0, -4.0f) * scale;
-	isJumping = true;
+	isJumping = true; 
 }
 
 Ball::~Ball()
