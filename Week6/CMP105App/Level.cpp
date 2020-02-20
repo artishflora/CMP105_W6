@@ -12,6 +12,13 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	ballNo1.setPosition(sf::Vector2f(500, 0));
 	ballNo1.getWin(window->getSize());
 	ballNo1.setInput(input);
+
+	targeterText.loadFromFile("gfx/Goomba.png");
+	targeter.setTexture(&targeterText);
+	targeter.setSize(sf::Vector2f(100, 100));
+	targeter.setPosition(0, 0);
+	targeter.getWin(window->getSize());
+	targeter.setInput(input);
 }
 
 Level::~Level()
@@ -30,6 +37,7 @@ void Level::update(float dt)
 {
 	ballNo1.update(dt);
 	ballNo1.handleInput(dt);
+	targeter.update(dt);
 }
 
 // Render level
@@ -38,6 +46,7 @@ void Level::render()
 	beginDraw();
 
 	window->draw(ballNo1);
+	window->draw(targeter);
 
 	endDraw();
 }
